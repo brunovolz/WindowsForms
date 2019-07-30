@@ -24,7 +24,8 @@ namespace CadAlunos
             FormCad.ShowDialog();
             Cadastro.Add(FormCad.newCad);
 
-            this.Close();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = Cadastro;
         }
     }
 }
