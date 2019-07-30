@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirst", "MyFirst.csproj", "{ACB3751A-73C8-476A-95A0-48D5DBC5A1ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroDeMusicas", "..\CadastroDeMusicas\CadastroDeMusicas.csproj", "{E023F055-D06F-4113-8DD0-DE49D5A4964F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACB3751A-73C8-476A-95A0-48D5DBC5A1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB3751A-73C8-476A-95A0-48D5DBC5A1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB3751A-73C8-476A-95A0-48D5DBC5A1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB3751A-73C8-476A-95A0-48D5DBC5A1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E023F055-D06F-4113-8DD0-DE49D5A4964F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E023F055-D06F-4113-8DD0-DE49D5A4964F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E023F055-D06F-4113-8DD0-DE49D5A4964F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E023F055-D06F-4113-8DD0-DE49D5A4964F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C09DC3F3-8418-4474-8EFF-8E5CC7977875}
+	EndGlobalSection
+EndGlobal
