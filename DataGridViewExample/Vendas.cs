@@ -39,5 +39,11 @@ namespace DataGridViewExample
             dataGridView1.Refresh();
             this.vendasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Vendas);
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            VendasInativos lixoVendas = new VendasInativos();
+            lixoVendas.ShowDialog();
+        }
     }
 }

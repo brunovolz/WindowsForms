@@ -18,12 +18,9 @@ namespace DataGridViewExample
         }
 
         private void Form2_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Marcas' table. You can move, or remove it, as needed.
-            this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet1.Marcas);
+        { 
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Marcas' table. You can move, or remove it, as needed.
             this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas);
-
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -33,8 +30,13 @@ namespace DataGridViewExample
                 as DataGridViewExample.QuerysInnerJoinDataSet1.MarcasRow;
 
             this.marcasTableAdapter.DeleteQuery(marcasSelect.Id);
-            dataGridView1.Refresh();
             this.marcasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Marcas);
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            MarcasInativas lixoMarcas = new MarcasInativas();
+            lixoMarcas.ShowDialog();
         }
     }
 }

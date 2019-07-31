@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-10" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Carros" ZOrder="6" X="70" Y="70" Height="342" Width="234" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:Marcas" ZOrder="5" X="352" Y="70" Height="319" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
+    <Shape ID="DesignTable:Marcas" ZOrder="5" X="369" Y="45" Height="388" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="239" />
     <Shape ID="DesignTable:Usuarios" ZOrder="4" X="722" Y="70" Height="319" Width="234" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
     <Shape ID="DesignTable:Vendas" ZOrder="3" X="352" Y="459" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="260" />
   </Shapes>
@@ -15,12 +15,12 @@
     <Connector ID="DesignRelation:FK_Carros_Marcas" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>352</X>
-          <Y>229</Y>
+          <X>369</X>
+          <Y>204</Y>
         </Point>
         <Point>
           <X>304</X>
-          <Y>229</Y>
+          <Y>204</Y>
         </Point>
       </RoutePoints>
     </Connector>

@@ -31,8 +31,13 @@ namespace DataGridViewExample
                 as DataGridViewExample.QuerysInnerJoinDataSet1.UsuariosRow;
 
             this.usuariosTableAdapter.DeleteQuery(usuSelect.Id);
-            dataGridView1.Refresh();
             this.usuariosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Usuarios);
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            UsuariosInativos lixoUsuarios = new UsuariosInativos();
+            lixoUsuarios.ShowDialog();
         }
     }
 }

@@ -2785,7 +2785,7 @@ SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Carros
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Car" +
@@ -2794,13 +2794,18 @@ SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Carros
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Car" +
-                "ros where Ativo = 1";
+                "ros where ativo = 0";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE [dbo].[Carros] SET Ativo = 0 WHERE ([Id] = @Original_Id) ";
+            this._commandCollection[2].CommandText = "SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Car" +
+                "ros where Ativo = 1";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE [dbo].[Carros] SET Ativo = 0 WHERE ([Id] = @Original_Id) ";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2831,7 +2836,7 @@ SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Carros
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int CustomQuery(QuerysInnerJoinDataSet1.CarrosDataTable dataTable) {
+        public virtual int CustomInativos(QuerysInnerJoinDataSet1.CarrosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2844,8 +2849,32 @@ SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Carros
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual QuerysInnerJoinDataSet1.CarrosDataTable GetDataBy() {
+        public virtual QuerysInnerJoinDataSet1.CarrosDataTable GetDataBy2() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            QuerysInnerJoinDataSet1.CarrosDataTable dataTable = new QuerysInnerJoinDataSet1.CarrosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int CustomQuery(QuerysInnerJoinDataSet1.CarrosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual QuerysInnerJoinDataSet1.CarrosDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             QuerysInnerJoinDataSet1.CarrosDataTable dataTable = new QuerysInnerJoinDataSet1.CarrosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3046,7 +3075,7 @@ SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Carros
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteQuery(int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((int)(Original_Id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3253,21 +3282,26 @@ SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Id = @
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Marcas";
+            this._commandCollection[0].CommandText = "SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Marcas WHERE Ativ" +
-                "o = 1";
+            this._commandCollection[1].CommandText = "SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Ativo =" +
+                " 1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "UPDATE [dbo].[Marcas] SET Ativo = 0 WHERE ([Id] = @Original_Id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Ativo =" +
+                " 0)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3313,6 +3347,30 @@ SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Id = @
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual QuerysInnerJoinDataSet1.MarcasDataTable GetDataBy() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            QuerysInnerJoinDataSet1.MarcasDataTable dataTable = new QuerysInnerJoinDataSet1.MarcasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int QueryInativos(QuerysInnerJoinDataSet1.MarcasDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual QuerysInnerJoinDataSet1.MarcasDataTable GetDataBy2() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             QuerysInnerJoinDataSet1.MarcasDataTable dataTable = new QuerysInnerJoinDataSet1.MarcasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3674,7 +3732,7 @@ SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (I
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Usuarios";
@@ -3682,13 +3740,18 @@ SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (I
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Usuarios where" +
-                " Ativo = 1";
+                " Ativo = 0";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE [dbo].[Usuarios] SET Ativo = 0  WHERE ([Id] = @Original_Id)";
+            this._commandCollection[2].CommandText = "SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Usuarios where" +
+                " Ativo = 1";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE [dbo].[Usuarios] SET Ativo = 0  WHERE ([Id] = @Original_Id)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3719,7 +3782,7 @@ SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int CustomQuery(QuerysInnerJoinDataSet1.UsuariosDataTable dataTable) {
+        public virtual int CustomInativos(QuerysInnerJoinDataSet1.UsuariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3732,8 +3795,32 @@ SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual QuerysInnerJoinDataSet1.UsuariosDataTable GetDataBy() {
+        public virtual QuerysInnerJoinDataSet1.UsuariosDataTable GetDataBy2() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            QuerysInnerJoinDataSet1.UsuariosDataTable dataTable = new QuerysInnerJoinDataSet1.UsuariosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int CustomQuery(QuerysInnerJoinDataSet1.UsuariosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual QuerysInnerJoinDataSet1.UsuariosDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             QuerysInnerJoinDataSet1.UsuariosDataTable dataTable = new QuerysInnerJoinDataSet1.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3891,7 +3978,7 @@ SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (I
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteQuery(int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((int)(Original_Id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4103,7 +4190,7 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM d" +
@@ -4112,13 +4199,18 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM d" +
-                "bo.Vendas where Ativo = 1";
+                "bo.Vendas where ativo = 0";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE[dbo].[Vendas] SET Ativo = 0 WHERE ([Id] = @Original_Id)";
+            this._commandCollection[2].CommandText = "SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM d" +
+                "bo.Vendas where Ativo = 1";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE[dbo].[Vendas] SET Ativo = 0 WHERE ([Id] = @Original_Id)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4149,7 +4241,7 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int CustomQuery(QuerysInnerJoinDataSet1.VendasDataTable dataTable) {
+        public virtual int CustomInativos(QuerysInnerJoinDataSet1.VendasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4162,8 +4254,32 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual QuerysInnerJoinDataSet1.VendasDataTable GetDataBy() {
+        public virtual QuerysInnerJoinDataSet1.VendasDataTable GetDataBy2() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            QuerysInnerJoinDataSet1.VendasDataTable dataTable = new QuerysInnerJoinDataSet1.VendasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int CustomQuery(QuerysInnerJoinDataSet1.VendasDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual QuerysInnerJoinDataSet1.VendasDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             QuerysInnerJoinDataSet1.VendasDataTable dataTable = new QuerysInnerJoinDataSet1.VendasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4344,7 +4460,7 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteQuery(int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((int)(Original_Id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

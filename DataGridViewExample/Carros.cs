@@ -25,7 +25,7 @@ namespace DataGridViewExample
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Carros' table. You can move, or remove it, as needed.
-            this.carrosTableAdapter1.Fill(this.querysInnerJoinDataSet1.Carros);
+            this.carrosTableAdapter1.CustomQuery(this.querysInnerJoinDataSet1.Carros);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -55,10 +55,22 @@ namespace DataGridViewExample
                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
                 as DataGridViewExample.QuerysInnerJoinDataSet1.CarrosRow;
 
-            //Permite deletar o Ativo(no caso dar Update = 0);
-            this.carrosTableAdapter.DeleteQuery(CarSelect.Id);
-            dataGridView1.Refresh();
+            switch (e.ColumnIndex)
+            {
+                //Coluna deletar
+                case 0:
+                    {//Permite deletar o Ativo(no caso dar Update = 0);
+                        this.carrosTableAdapter.DeleteQuery(CarSelect.Id);
+                    }break;
+            }
+
             this.carrosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Carros);
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Inativos lixo = new Inativos();
+            lixo.ShowDialog();
         }
     }
 }

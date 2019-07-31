@@ -44,6 +44,7 @@
             this.vendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
             this.vendasTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.VendasTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
@@ -51,7 +52,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(372, 12);
+            this.button1.Location = new System.Drawing.Point(13, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(404, 36);
             this.button1.TabIndex = 0;
@@ -193,11 +194,23 @@
             // 
             this.vendasTableAdapter.ClearBeforeFill = true;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(740, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(404, 36);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Inativos";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // Vendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 519);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Name = "Vendas";
@@ -227,5 +240,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button2;
     }
 }

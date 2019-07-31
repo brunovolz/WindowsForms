@@ -52,17 +52,35 @@
     <Compile Include="Carros.Designer.cs">
       <DependentUpon>Carros.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarrosInativos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inativos.Designer.cs">
+      <DependentUpon>CarrosInativos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marcas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Marcas.Designer.cs">
       <DependentUpon>Marcas.cs</DependentUpon>
     </Compile>
+    <Compile Include="MarcasInativas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcasInativas.Designer.cs">
+      <DependentUpon>MarcasInativas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosInativos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosInativos.Designer.cs">
+      <DependentUpon>UsuariosInativos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vendas.cs">
       <SubType>Form</SubType>
@@ -80,14 +98,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuerysInnerJoinDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="VendasInativos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendasInativos.Designer.cs">
+      <DependentUpon>VendasInativos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Carros.resx">
       <DependentUpon>Carros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inativos.resx">
+      <DependentUpon>CarrosInativos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MarcasInativas.resx">
+      <DependentUpon>MarcasInativas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosInativos.resx">
+      <DependentUpon>UsuariosInativos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas.resx">
       <DependentUpon>Vendas.cs</DependentUpon>
@@ -101,6 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VendasInativos.resx">
+      <DependentUpon>VendasInativos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

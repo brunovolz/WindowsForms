@@ -88,6 +88,14 @@ SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Carros
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Carros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomInativos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="CustomInativos" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CustomInativos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, Modelo, Ano, Marca, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Carros where ativo = 0</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Carros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CustomQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -141,7 +149,7 @@ SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Id = S
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Marcas</CommandText>
+                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -182,7 +190,7 @@ SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Id = @
               <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Marcas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CustomQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Marcas WHERE Ativo = 1</CommandText>
+                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Ativo = 1)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -196,6 +204,14 @@ SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Id = @
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Marcas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="QueryInativos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="QueryInativos" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="QueryInativos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Ativo = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -270,6 +286,14 @@ SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (I
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomInativos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="CustomInativos" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CustomInativos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Usuarios where Ativo = 0</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CustomQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -371,6 +395,14 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Vendas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomInativos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="CustomInativos" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CustomInativos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Vendas where ativo = 0</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="QuerysInnerJoin.dbo.Vendas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CustomQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
