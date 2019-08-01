@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,6 +63,11 @@ namespace DataGridViewExample
                     {//Permite deletar o Ativo(no caso dar Update = 0);
                         this.carrosTableAdapter.DeleteQuery(CarSelect.Id);
                     }break;
+                case 1: {
+                        frmEdicaoCarros editCarro = new frmEdicaoCarros();
+                        editCarro.ShowDialog();
+                    } break;
+
             }
 
             this.carrosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Carros);
@@ -71,6 +77,12 @@ namespace DataGridViewExample
         {
             Inativos lixo = new Inativos();
             lixo.ShowDialog();
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            VendasInativos lixoVendas = new VendasInativos();
+            lixoVendas.ShowDialog();
         }
     }
 }

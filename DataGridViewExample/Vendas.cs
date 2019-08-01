@@ -42,7 +42,7 @@ namespace DataGridViewExample
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            VendasInativos lixoVendas = new VendasInativos();
+           VendasInativos lixoVendas = new VendasInativos();
             lixoVendas.ShowDialog();
         }
     }
