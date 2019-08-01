@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,27 @@ namespace DataGridViewExample
                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
                 as DataGridViewExample.QuerysInnerJoinDataSet1.MarcasRow;
 
-            this.marcasTableAdapter.DeleteQuery(marcasSelect.Id);
+            switch (e.ColumnIndex)
+            {
+                //Coluna deletar
+                case 0:
+                    {//Permite deletar o Ativo(no caso dar Update = 0);
+                        this.marcasTableAdapter.DeleteQuery(marcasSelect.Id);
+                    }
+                    break;
+                case 1:
+                    {
+                        frmEdicaoMarcas editMarca = new frmEdicaoMarcas();
+                        editMarca.MarcasRow = marcasSelect;
+                        editMarca.ShowDialog();
+
+                        // Esse não precisa criar query, pois ele da update em tudo.
+                        this.marcasTableAdapter.Update(editMarca.MarcasRow);
+                    }
+                    break;
+
+            }
+
             this.marcasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Marcas);
         }
 

@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +19,24 @@ namespace DataGridViewExample
             InitializeComponent();
         }
 
+        public DataGridViewExample.QuerysInnerJoinDataSet1.CarrosRow carrosRow;
         private void Button1_Click(object sender, EventArgs e)
         {
+            //Abre o fomulario de atualização
+            frmAdicionar formAdd = new frmAdicionar();
+            formAdd.ShowDialog();
+            //Insere na tabela do banco de dados de carros o novo registro
+            this.carrosTableAdapter.Insert(
+                formAdd.carrosRow.Modelo,
+                formAdd.carrosRow.Ano,
+                formAdd.carrosRow.Marca,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            this.carrosTableAdapter1.CustomQuery(this.querysInnerJoinDataSet1.Carros);
 
         }
 
@@ -69,7 +86,7 @@ namespace DataGridViewExample
                         editCarro.ShowDialog();
 
                         // Esse não precisa criar query, pois ele da update em tudo.
-                        //this.carrosTableAdapter.Update(editCar.CarrosRow);
+                        //this.carrosTableAdapter.Update(editCarro.CarrosRow);
                         this.carrosTableAdapter.UpdateQuery(
                             editCarro.CarrosRow.Modelo,
                             editCarro.CarrosRow.Ano.ToString(),
