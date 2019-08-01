@@ -17,11 +17,16 @@ namespace DataGridViewExample.Edicao
             InitializeComponent();
         }
 
+        public DataGridViewExample.QuerysInnerJoinDataSet1.CarrosRow CarrosRow;
+
         private void FrmEdicaoCarros_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Marcas' table. You can move, or remove it, as needed.
+           // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Marcas' table. You can move, or remove it, as needed.
             this.marcasTableAdapter.FillBy(this.querysInnerJoinDataSet1.Marcas);
 
+            textBox1.Text = CarrosRow.Modelo;
+            dateTimePicker1.Value = CarrosRow.Ano;
+            comboBox1.SelectedValue = CarrosRow.Marca;
         }
 
         private void FillByToolStripButton_Click(object sender, EventArgs e)
@@ -35,6 +40,22 @@ namespace DataGridViewExample.Edicao
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            CarrosRow.Modelo = textBox1.Text;
+            CarrosRow.Ano = dateTimePicker1.Value;
+            CarrosRow.Marca = (int)comboBox1.SelectedValue;
+
+            this.Close();
+        }
+
+        private void FrmEdicaoCarros_KeyDownprivate(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "Escape")
+
+                this.Close();
         }
     }
 }

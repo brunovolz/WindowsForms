@@ -142,6 +142,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // frmEdicaoCarros
             // 
@@ -159,7 +160,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmEdicaoCarros";
             this.Text = "frmEdicaoCarros";
-            this.Load += new System.EventHandler(this.FrmEdicaoCarros_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmEdicaoCarros_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).EndInit();
             this.fillByToolStrip.ResumeLayout(false);

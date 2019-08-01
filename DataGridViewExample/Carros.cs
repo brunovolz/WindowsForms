@@ -65,7 +65,18 @@ namespace DataGridViewExample
                     }break;
                 case 1: {
                         frmEdicaoCarros editCarro = new frmEdicaoCarros();
+                        editCarro.CarrosRow = CarSelect;
                         editCarro.ShowDialog();
+
+                        // Esse não precisa criar query, pois ele da update em tudo.
+                        //this.carrosTableAdapter.Update(editCar.CarrosRow);
+                        this.carrosTableAdapter.UpdateQuery(
+                            editCarro.CarrosRow.Modelo,
+                            editCarro.CarrosRow.Ano.ToString(),
+                            editCarro.CarrosRow.Marca,
+                            editCarro.CarrosRow.UsuAlt,
+                            DateTime.Now,
+                            editCarro.CarrosRow.Id);
                     } break;
 
             }

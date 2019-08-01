@@ -32,7 +32,7 @@ namespace DataGridViewExample
             switch (lixeiraGlobal.Tabela)
             {
                 case "carros": {
-                        this.carrosTableAdapter1.UpdateQuery(lixeiraGlobal.Id);
+                        this.carrosTableAdapter1.UpdateOnlyCars(lixeiraGlobal.Id);
                     } break;
                 case "Marcas":
                     {
