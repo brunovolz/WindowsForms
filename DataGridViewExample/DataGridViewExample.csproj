@@ -76,7 +76,7 @@
     <Compile Include="Carros.Designer.cs">
       <DependentUpon>Carros.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarrosInativos.cs">
+    <Compile Include="Inativos\CarrosInativos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Edicao\frmEdicaoCarros.cs">
@@ -97,7 +97,7 @@
     <Compile Include="Edicao\frmEdicaoUsuarios.Designer.cs">
       <DependentUpon>frmEdicaoUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inativos.Designer.cs">
+    <Compile Include="Inativos\Inativos.Designer.cs">
       <DependentUpon>CarrosInativos.cs</DependentUpon>
     </Compile>
     <Compile Include="Marcas.cs">
@@ -106,10 +106,10 @@
     <Compile Include="Marcas.Designer.cs">
       <DependentUpon>Marcas.cs</DependentUpon>
     </Compile>
-    <Compile Include="MarcasInativas.cs">
+    <Compile Include="Inativos\MarcasInativas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MarcasInativas.Designer.cs">
+    <Compile Include="Inativos\MarcasInativas.Designer.cs">
       <DependentUpon>MarcasInativas.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Carro.cs" />
@@ -122,10 +122,10 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsuariosInativos.cs">
+    <Compile Include="Inativos\UsuariosInativos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsuariosInativos.Designer.cs">
+    <Compile Include="Inativos\UsuariosInativos.Designer.cs">
       <DependentUpon>UsuariosInativos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vendas.cs">
@@ -144,10 +144,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuerysInnerJoinDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="VendasInativos.cs">
+    <Compile Include="Inativos\VendasInativos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VendasInativos.Designer.cs">
+    <Compile Include="Inativos\VendasInativos.Designer.cs">
       <DependentUpon>VendasInativos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Adicionar\AdicionarMarca.resx">
@@ -174,19 +174,19 @@
     <EmbeddedResource Include="Edicao\frmEdicaoUsuarios.resx">
       <DependentUpon>frmEdicaoUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inativos.resx">
+    <EmbeddedResource Include="Inativos\Inativos.resx">
       <DependentUpon>CarrosInativos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marcas.resx">
       <DependentUpon>Marcas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MarcasInativas.resx">
+    <EmbeddedResource Include="Inativos\MarcasInativas.resx">
       <DependentUpon>MarcasInativas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsuariosInativos.resx">
+    <EmbeddedResource Include="Inativos\UsuariosInativos.resx">
       <DependentUpon>UsuariosInativos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas.resx">
@@ -201,7 +201,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VendasInativos.resx">
+    <EmbeddedResource Include="Inativos\VendasInativos.resx">
       <DependentUpon>VendasInativos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
