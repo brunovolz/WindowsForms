@@ -49,7 +49,6 @@ namespace DataGridViewExample
                         this.marcasTableAdapter.Update(editMarca.MarcasRow);
                     }
                     break;
-
             }
 
             this.marcasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Marcas);

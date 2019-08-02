@@ -61,5 +61,11 @@ namespace DataGridViewExample
            VendasInativos lixoVendas = new VendasInativos();
             lixoVendas.ShowDialog();
         }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            VendasInativos lixoVendas = new VendasInativos();
+            lixoVendas.ShowDialog();
+        }
     }
 }
