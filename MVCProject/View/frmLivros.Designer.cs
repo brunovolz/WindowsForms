@@ -1,6 +1,6 @@
 ﻿namespace MVCProject.View
 {
-    partial class frmUsuarios
+    partial class frmLivros
     {
         /// <summary>
         /// Required designer variable.
@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.sistemaBibliotecaDataSet = new MVCProject.SistemaBibliotecaDataSet();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosTableAdapter = new MVCProject.SistemaBibliotecaDataSetTableAdapters.UsuariosTableAdapter();
+            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDataSetTableAdapters.LivrosTableAdapter();
             this.deletarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isbnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sinopseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.usuIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,17 +51,8 @@
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -70,37 +64,49 @@
             this.deletarDataGridViewTextBoxColumn,
             this.Editar,
             this.idDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.loginDataGridViewTextBoxColumn,
-            this.senhaDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
+            this.registroDataGridViewTextBoxColumn,
+            this.tituloDataGridViewTextBoxColumn,
+            this.isbnDataGridViewTextBoxColumn,
+            this.generoDataGridViewTextBoxColumn,
+            this.editoraDataGridViewTextBoxColumn,
+            this.sinopseDataGridViewTextBoxColumn,
+            this.observacoesDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
             this.usuIncDataGridViewTextBoxColumn,
             this.usuAltDataGridViewTextBoxColumn,
             this.datIncDataGridViewTextBoxColumn,
             this.datAltDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.usuariosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 56);
+            this.dataGridView1.DataSource = this.livrosBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(30, 91);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(797, 395);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.Size = new System.Drawing.Size(740, 338);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(39, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 63);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Adicionar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // sistemaBibliotecaDataSet
             // 
             this.sistemaBibliotecaDataSet.DataSetName = "SistemaBibliotecaDataSet";
             this.sistemaBibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // usuariosBindingSource
+            // livrosBindingSource
             // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.sistemaBibliotecaDataSet;
+            this.livrosBindingSource.DataMember = "Livros";
+            this.livrosBindingSource.DataSource = this.sistemaBibliotecaDataSet;
             // 
-            // usuariosTableAdapter
+            // livrosTableAdapter
             // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
+            this.livrosTableAdapter.ClearBeforeFill = true;
             // 
             // deletarDataGridViewTextBoxColumn
             // 
@@ -115,12 +121,11 @@
             // 
             // Editar
             // 
+            this.Editar.DataPropertyName = "Id";
             this.Editar.HeaderText = "Editar";
             this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
-            this.Editar.Text = "Editar";
-            this.Editar.UseColumnTextForButtonValue = true;
             this.Editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
@@ -132,41 +137,68 @@
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
-            // nomeDataGridViewTextBoxColumn
+            // registroDataGridViewTextBoxColumn
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 125;
+            this.registroDataGridViewTextBoxColumn.DataPropertyName = "Registro";
+            this.registroDataGridViewTextBoxColumn.HeaderText = "Registro";
+            this.registroDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.registroDataGridViewTextBoxColumn.Name = "registroDataGridViewTextBoxColumn";
+            this.registroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.registroDataGridViewTextBoxColumn.Width = 125;
             // 
-            // loginDataGridViewTextBoxColumn
+            // tituloDataGridViewTextBoxColumn
             // 
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
-            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            this.loginDataGridViewTextBoxColumn.Width = 125;
+            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            this.tituloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tituloDataGridViewTextBoxColumn.Width = 125;
             // 
-            // senhaDataGridViewTextBoxColumn
+            // isbnDataGridViewTextBoxColumn
             // 
-            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "Senha";
-            this.senhaDataGridViewTextBoxColumn.HeaderText = "Senha";
-            this.senhaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
-            this.senhaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.senhaDataGridViewTextBoxColumn.Width = 125;
+            this.isbnDataGridViewTextBoxColumn.DataPropertyName = "Isbn";
+            this.isbnDataGridViewTextBoxColumn.HeaderText = "Isbn";
+            this.isbnDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.isbnDataGridViewTextBoxColumn.Name = "isbnDataGridViewTextBoxColumn";
+            this.isbnDataGridViewTextBoxColumn.ReadOnly = true;
+            this.isbnDataGridViewTextBoxColumn.Width = 125;
             // 
-            // emailDataGridViewTextBoxColumn
+            // generoDataGridViewTextBoxColumn
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 125;
+            this.generoDataGridViewTextBoxColumn.DataPropertyName = "Genero";
+            this.generoDataGridViewTextBoxColumn.HeaderText = "Genero";
+            this.generoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
+            this.generoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.generoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // editoraDataGridViewTextBoxColumn
+            // 
+            this.editoraDataGridViewTextBoxColumn.DataPropertyName = "Editora";
+            this.editoraDataGridViewTextBoxColumn.HeaderText = "Editora";
+            this.editoraDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.editoraDataGridViewTextBoxColumn.Name = "editoraDataGridViewTextBoxColumn";
+            this.editoraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.editoraDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sinopseDataGridViewTextBoxColumn
+            // 
+            this.sinopseDataGridViewTextBoxColumn.DataPropertyName = "Sinopse";
+            this.sinopseDataGridViewTextBoxColumn.HeaderText = "Sinopse";
+            this.sinopseDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sinopseDataGridViewTextBoxColumn.Name = "sinopseDataGridViewTextBoxColumn";
+            this.sinopseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sinopseDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // observacoesDataGridViewTextBoxColumn
+            // 
+            this.observacoesDataGridViewTextBoxColumn.DataPropertyName = "Observacoes";
+            this.observacoesDataGridViewTextBoxColumn.HeaderText = "Observacoes";
+            this.observacoesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.observacoesDataGridViewTextBoxColumn.Name = "observacoesDataGridViewTextBoxColumn";
+            this.observacoesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.observacoesDataGridViewTextBoxColumn.Width = 125;
             // 
             // ativoDataGridViewCheckBoxColumn
             // 
@@ -213,37 +245,40 @@
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
-            // frmUsuarios
+            // frmLivros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Name = "frmUsuarios";
-            this.Text = "frmUsuarios";
-            this.Load += new System.EventHandler(this.FrmUsuarios_Load);
+            this.Name = "frmLivros";
+            this.Text = "Livros";
+            this.Load += new System.EventHandler(this.FrmLivros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
         private SistemaBibliotecaDataSet sistemaBibliotecaDataSet;
-        private System.Windows.Forms.BindingSource usuariosBindingSource;
-        private SistemaBibliotecaDataSetTableAdapters.UsuariosTableAdapter usuariosTableAdapter;
+        private System.Windows.Forms.BindingSource livrosBindingSource;
+        private SistemaBibliotecaDataSetTableAdapters.LivrosTableAdapter livrosTableAdapter;
         private System.Windows.Forms.DataGridViewButtonColumn deletarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn registroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isbnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn editoraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sinopseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacoesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;

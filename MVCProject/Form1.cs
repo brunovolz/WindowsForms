@@ -1,4 +1,5 @@
 ﻿using MVCProject.Model;
+using MVCProject.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,8 @@ namespace MVCProject
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            frmPrincipal frmInicio = new frmPrincipal();
+            frmInicio.ShowDialog();
         }
     }
 }

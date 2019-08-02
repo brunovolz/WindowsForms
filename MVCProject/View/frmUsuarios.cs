@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace MVCProject.View
 {
-    public partial class textboxUsuarios : Form
+    public partial class frmUsuarios : Form
     {
-        public textboxUsuarios()
+        public frmUsuarios()
         {
             InitializeComponent();
         }
 
-        private void TextboxUsuarios_Load(object sender, EventArgs e)
+        private void FrmUsuarios_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Usuarios' table. You can move, or remove it, as needed.
             this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Usuarios);
