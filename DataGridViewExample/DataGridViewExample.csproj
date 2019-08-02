@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionar\AdicionarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\AdicionarMarca.Designer.cs">
+      <DependentUpon>AdicionarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\AdicionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\AdicionarUsuario.Designer.cs">
+      <DependentUpon>AdicionarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\AdicionarVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\AdicionarVenda.Designer.cs">
+      <DependentUpon>AdicionarVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adicionar\frmAdicionar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +113,9 @@
       <DependentUpon>MarcasInativas.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Carro.cs" />
+    <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\Vendas.cs" />
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +150,15 @@
     <Compile Include="VendasInativos.Designer.cs">
       <DependentUpon>VendasInativos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adicionar\AdicionarMarca.resx">
+      <DependentUpon>AdicionarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\AdicionarUsuario.resx">
+      <DependentUpon>AdicionarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\AdicionarVenda.resx">
+      <DependentUpon>AdicionarVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adicionar\frmAdicionar.resx">
       <DependentUpon>frmAdicionar.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Adicionar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,22 @@ namespace DataGridViewExample
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            AdicionarVenda AddVenda = new AdicionarVenda();
+            AddVenda.ShowDialog();
 
+            if(AddVenda.vendasRow?.Carro > 0
+                && AddVenda.vendasRow?.Valor > 0)
+            this.vendasTableAdapter.Insert(
+                AddVenda.vendasRow.Carro,
+                AddVenda.vendasRow.Quantidade,
+                AddVenda.vendasRow.Valor,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            this.vendasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Vendas);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

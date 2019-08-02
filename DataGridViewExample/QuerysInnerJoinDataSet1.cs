@@ -10,9 +10,12 @@
     }
 }
 
-namespace DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters {
-    
-    
+namespace DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters
+{
+    partial class MarcasTableAdapter
+    {
+    }
+
     public partial class UsuariosTableAdapter {
     }
 }

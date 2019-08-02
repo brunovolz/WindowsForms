@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Adicionar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace DataGridViewExample
         {
             InitializeComponent();
         }
-
+        public DataGridViewExample.QuerysInnerJoinDataSet1.UsuariosRow usuariosRow;
         private void Form3_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Usuarios' table. You can move, or remove it, as needed.
@@ -38,6 +39,24 @@ namespace DataGridViewExample
         {
             UsuariosInativos lixoUsuarios = new UsuariosInativos();
             lixoUsuarios.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //Abre o fomulario de atualização
+            AdicionarUsuario AddUsuario = new AdicionarUsuario();
+            AddUsuario.ShowDialog();
+            //Insere na tabela do banco de dados de carros o novo registro
+            this.usuariosTableAdapter.Insert(
+                AddUsuario.usuarioRow.Usuario,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+
+            this.usuariosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Usuarios);
         }
     }
 }

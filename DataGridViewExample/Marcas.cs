@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace DataGridViewExample
         {
             InitializeComponent();
         }
-
+        public DataGridViewExample.QuerysInnerJoinDataSet1.MarcasRow marcasRow;
         private void Form2_Load(object sender, EventArgs e)
         { 
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Marcas' table. You can move, or remove it, as needed.
@@ -58,6 +59,22 @@ namespace DataGridViewExample
         {
             MarcasInativas lixoMarcas = new MarcasInativas();
             lixoMarcas.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            AdicionarMarca AddMarca = new AdicionarMarca();
+            AddMarca.ShowDialog();
+            //Insere na tabela do banco de dados de carros o novo registro
+            this.marcasTableAdapter.Insert(
+                AddMarca.marcaRow.Nome,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas);
         }
     }
 }
