@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVCProject.Model
 {
-    class LivroAutor
+    public class LivroAutor
     {
         public int Livro { get; set; }
         public int Autor { get; set; }

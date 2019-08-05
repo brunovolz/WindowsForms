@@ -12,6 +12,10 @@
 
 namespace DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters
 {
+    partial class DataTable1TableAdapter
+    {
+    }
+
     partial class MarcasTableAdapter
     {
     }

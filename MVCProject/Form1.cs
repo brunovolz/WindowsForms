@@ -17,13 +17,21 @@ namespace MVCProject
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmInicio = new frmPrincipal();
-            frmInicio.ShowDialog();
+            var result = this.usuariosTableAdapter1.LoginQuery(textBox1.Text, textBox2.Text);
+
+            if (result != null)
+            {
+                frmPrincipal frmInicio = new frmPrincipal();
+                frmInicio.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Login invalido!");
+            }
         }
     }
 }

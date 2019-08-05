@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.Adicionar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,12 +22,17 @@ namespace MVCProject.View
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Autores' table. You can move, or remove it, as needed.
             this.autoresTableAdapter.Fill(this.sistemaBibliotecaDataSet.Autores);
-
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            //var AutorSelect 
+            frmAddAutor newAutor = new frmAddAutor();
+            newAutor.ShowDialog();
+            this.autoresTableAdapter.Insert(
+                newAutor.autorRow.Nome,
+                newAutor.autorRow.Descricao
+                );
+            this.autoresTableAdapter.Fill(this.sistemaBibliotecaDataSet.Autores);
         }
     }
 }

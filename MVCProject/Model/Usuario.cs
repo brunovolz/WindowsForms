@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVCProject.Model
 {
-    class Usuario : Informacao
+    public class UsuarioClass : Informacao
     {
         public int Id { get; set; }
         public string Nome { get; set; }

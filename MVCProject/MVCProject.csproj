@@ -46,11 +46,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionar\frmAddAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAddAutor.Designer.cs">
+      <DependentUpon>frmAddAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\frmAddEditora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAddEditora.Designer.cs">
+      <DependentUpon>frmAddEditora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\frmAddGeneroc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAddGeneroc.Designer.cs">
+      <DependentUpon>frmAddGeneroc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\frmAddLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAddLivro.Designer.cs">
+      <DependentUpon>frmAddLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\frmAddLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAddLocacao.Designer.cs">
+      <DependentUpon>frmAddLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\frmAddUsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAddUsu.Designer.cs">
+      <DependentUpon>frmAddUsu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EditLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit\EditLivro.Designer.cs">
+      <DependentUpon>EditLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EditLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit\EditLocacao.Designer.cs">
+      <DependentUpon>EditLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EditUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit\EditUsuario.Designer.cs">
+      <DependentUpon>EditUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inativos\InativoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inativos\InativoUsuario.Designer.cs">
+      <DependentUpon>InativoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Autor.cs" />
     <Compile Include="Model\Editora.cs" />
@@ -112,8 +172,38 @@
     <Compile Include="View\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adicionar\frmAddAutor.resx">
+      <DependentUpon>frmAddAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAddEditora.resx">
+      <DependentUpon>frmAddEditora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAddGeneroc.resx">
+      <DependentUpon>frmAddGeneroc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAddLivro.resx">
+      <DependentUpon>frmAddLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAddLocacao.resx">
+      <DependentUpon>frmAddLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAddUsu.resx">
+      <DependentUpon>frmAddUsu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit\EditLivro.resx">
+      <DependentUpon>EditLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit\EditLocacao.resx">
+      <DependentUpon>EditLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit\EditUsuario.resx">
+      <DependentUpon>EditUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inativos\InativoUsuario.resx">
+      <DependentUpon>InativoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
