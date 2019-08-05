@@ -25,6 +25,11 @@ namespace MVCProject
 
             if (result != null)
             {
+                Session.user = new UsuarioClass
+                {
+                    Id = (int)result
+                };
+
                 frmPrincipal frmInicio = new frmPrincipal();
                 frmInicio.ShowDialog();
             }
