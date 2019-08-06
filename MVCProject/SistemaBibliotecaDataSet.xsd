@@ -241,7 +241,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Livros</CommandText>
+                    <CommandText>SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Livros</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -295,14 +295,17 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
               <Mapping SourceColumn="UsuAlt" DataSetColumn="UsuAlt" />
               <Mapping SourceColumn="DatInc" DataSetColumn="DatInc" />
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
+              <Mapping SourceColumn="Genero.Tipo" DataSetColumn="Genero.Tipo" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectName="SistemaBiblioteca.dbo.Livros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CustomQuery">
+              <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CustomQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id,Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt
-FROM     Livros
-WHERE  (Ativo = 1)</CommandText>
+                    <CommandText>SELECT Livros.Id, Livros.Registro, Livros.Titulo, Livros.Isbn, Livros.Genero, Livros.Editora, Livros.Sinopse, Livros.Observacoes, Livros.Ativo, Livros.UsuInc, Livros.UsuAlt, Livros.DatInc, Livros.DatAlt, Editoras.Nome AS 'Editoras.Nome', Generos.Tipo as 'Genero.Tipo'
+FROM     Livros INNER JOIN
+                  Editoras ON Livros.Editora = Editoras.Id INNER JOIN
+                  Generos ON Livros.Genero = Generos.Id
+WHERE  (Livros.Ativo = 1)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -690,6 +693,9 @@ WHERE  (LivroAutor.Livro = @livroId)</CommandText>
               <xs:element name="DatInc" msprop:Generator_ColumnVarNameInTable="columnDatInc" msprop:Generator_ColumnPropNameInRow="DatInc" msprop:Generator_ColumnPropNameInTable="DatIncColumn" msprop:Generator_UserColumnName="DatInc" type="xs:dateTime" />
               <xs:element name="DatAlt" msprop:Generator_ColumnVarNameInTable="columnDatAlt" msprop:Generator_ColumnPropNameInRow="DatAlt" msprop:Generator_ColumnPropNameInTable="DatAltColumn" msprop:Generator_UserColumnName="DatAlt" type="xs:dateTime" />
               <xs:element name="Deletar" msprop:Generator_ColumnVarNameInTable="columnDeletar" msprop:Generator_ColumnPropNameInRow="Deletar" msprop:Generator_ColumnPropNameInTable="DeletarColumn" msprop:Generator_UserColumnName="Deletar" type="xs:string" minOccurs="0" />
+              <xs:element name="Genero.Tipo" msprop:Generator_ColumnVarNameInTable="_columnGenero_Tipo" msprop:Generator_ColumnPropNameInRow="_Genero_Tipo" msprop:Generator_ColumnPropNameInTable="_Genero_TipoColumn" msprop:Generator_UserColumnName="Genero.Tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="Editoras.Nome" msprop:Generator_ColumnVarNameInTable="_columnEditoras_Nome" msprop:Generator_ColumnPropNameInRow="_Editoras_Nome" msprop:Generator_ColumnPropNameInTable="_Editoras_NomeColumn" msprop:Generator_UserColumnName="Editoras.Nome" type="xs:string" minOccurs="0" />
+              <xs:element name="Editar" msprop:Generator_ColumnVarNameInTable="columnEditar" msprop:Generator_ColumnPropNameInRow="Editar" msprop:Generator_ColumnPropNameInTable="EditarColumn" msprop:Generator_UserColumnName="Editar" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

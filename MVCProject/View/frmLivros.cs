@@ -23,6 +23,8 @@ namespace MVCProject.View
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Livros' table. You can move, or remove it, as needed.
             this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Livros);
+            // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Livros' table. You can move, or remove it, as needed.
+            //this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Livros);
 
         }
 
