@@ -37,8 +37,8 @@
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaBibliotecaDataSet = new MVCProject.SistemaBibliotecaDataSet();
-            this.button1 = new System.Windows.Forms.Button();
             this.editorasTableAdapter = new MVCProject.SistemaBibliotecaDataSetTableAdapters.EditorasTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDataSet)).BeginInit();
@@ -57,12 +57,12 @@
             this.nomeDataGridViewTextBoxColumn,
             this.descricaoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.editorasBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(-2, 84);
+            this.dataGridView1.Location = new System.Drawing.Point(114, 222);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(801, 364);
+            this.dataGridView1.Size = new System.Drawing.Size(681, 286);
             this.dataGridView1.TabIndex = 3;
             // 
             // Deletar
@@ -120,27 +120,43 @@
             this.sistemaBibliotecaDataSet.DataSetName = "SistemaBibliotecaDataSet";
             this.sistemaBibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 52);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // editorasTableAdapter
             // 
             this.editorasTableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::MVCProject.Properties.Resources.TOMELIROLA1;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(593, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(280, 116);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Adicionar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button1_Click);
             // 
             // frmEditoras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackgroundImage = global::MVCProject.Properties.Resources.apocalypseCapa_pt_830x467;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(903, 507);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.DoubleBuffered = true;
             this.Name = "frmEditoras";
             this.Text = "Editoras";
             this.Load += new System.EventHandler(this.FrmEditoras_Load);
@@ -154,7 +170,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
         private SistemaBibliotecaDataSet sistemaBibliotecaDataSet;
         private System.Windows.Forms.BindingSource editorasBindingSource;
         private SistemaBibliotecaDataSetTableAdapters.EditorasTableAdapter editorasTableAdapter;
@@ -163,5 +178,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button2;
     }
 }

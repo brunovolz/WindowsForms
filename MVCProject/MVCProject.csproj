@@ -214,6 +214,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\frmAutores.resx">
       <DependentUpon>frmAutores.cs</DependentUpon>
@@ -260,6 +261,35 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\brasil-eleicoes-dilma-rousseff-20180911-0001-copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\como-ganhar-dinheiro-com-a-internet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOMELIROLA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memes-dos-millennials-que-marcaram-o-inicio-da-internet-og.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10zsg8h.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apocalypseCapa_pt-830x467.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOMELIROLA1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truco-whatzap-curtinhas-do-pasto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxresdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4rp9g5.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

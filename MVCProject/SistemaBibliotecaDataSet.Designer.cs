@@ -2340,6 +2340,14 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnDeletar;
             
+            private global::System.Data.DataColumn _columnUsuario_Nome;
+            
+            private global::System.Data.DataColumn _columnLivro_Titulo;
+            
+            private global::System.Data.DataColumn columnEditar;
+            
+            private global::System.Data.DataColumn _columnGeneros_Tipo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LocacaoDataTable() {
@@ -2463,6 +2471,38 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Usuario_NomeColumn {
+                get {
+                    return this._columnUsuario_Nome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Livro_TituloColumn {
+                get {
+                    return this._columnLivro_Titulo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EditarColumn {
+                get {
+                    return this.columnEditar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Generos_TipoColumn {
+                get {
+                    return this._columnGeneros_Tipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2498,7 +2538,7 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LocacaoRow AddLocacaoRow(LivrosRow parentLivrosRowByFK_Locaçao_Livros, UsuariosRow parentUsuariosRowByFK_Locaçao_UsuarioAloc, int Tipo, System.DateTime Devolucao, bool Ativo, UsuariosRow parentUsuariosRowByFK_Locaçao_UsuInc, UsuariosRow parentUsuariosRowByFK_Locaçao_UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string Deletar) {
+            public LocacaoRow AddLocacaoRow(LivrosRow parentLivrosRowByFK_Locaçao_Livros, UsuariosRow parentUsuariosRowByFK_Locaçao_UsuarioAloc, int Tipo, System.DateTime Devolucao, bool Ativo, UsuariosRow parentUsuariosRowByFK_Locaçao_UsuInc, UsuariosRow parentUsuariosRowByFK_Locaçao_UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string Deletar, string _Usuario_Nome, string _Livro_Titulo, string Editar, string _Generos_Tipo) {
                 LocacaoRow rowLocacaoRow = ((LocacaoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2511,7 +2551,11 @@ namespace MVCProject {
                         null,
                         DatInc,
                         DatAlt,
-                        Deletar};
+                        Deletar,
+                        _Usuario_Nome,
+                        _Livro_Titulo,
+                        Editar,
+                        _Generos_Tipo};
                 if ((parentLivrosRowByFK_Locaçao_Livros != null)) {
                     columnValuesArray[1] = parentLivrosRowByFK_Locaçao_Livros[0];
                 }
@@ -2564,6 +2608,10 @@ namespace MVCProject {
                 this.columnDatInc = base.Columns["DatInc"];
                 this.columnDatAlt = base.Columns["DatAlt"];
                 this.columnDeletar = base.Columns["Deletar"];
+                this._columnUsuario_Nome = base.Columns["Usuario.Nome"];
+                this._columnLivro_Titulo = base.Columns["Livro.Titulo"];
+                this.columnEditar = base.Columns["Editar"];
+                this._columnGeneros_Tipo = base.Columns["Generos.Tipo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2591,6 +2639,20 @@ namespace MVCProject {
                 base.Columns.Add(this.columnDatAlt);
                 this.columnDeletar = new global::System.Data.DataColumn("Deletar", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDeletar);
+                this._columnUsuario_Nome = new global::System.Data.DataColumn("Usuario.Nome", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnUsuario_Nome.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnUsuario_Nome");
+                this._columnUsuario_Nome.ExtendedProperties.Add("Generator_UserColumnName", "Usuario.Nome");
+                base.Columns.Add(this._columnUsuario_Nome);
+                this._columnLivro_Titulo = new global::System.Data.DataColumn("Livro.Titulo", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnLivro_Titulo.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnLivro_Titulo");
+                this._columnLivro_Titulo.ExtendedProperties.Add("Generator_UserColumnName", "Livro.Titulo");
+                base.Columns.Add(this._columnLivro_Titulo);
+                this.columnEditar = new global::System.Data.DataColumn("Editar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEditar);
+                this._columnGeneros_Tipo = new global::System.Data.DataColumn("Generos.Tipo", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnGeneros_Tipo.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnGeneros_Tipo");
+                this._columnGeneros_Tipo.ExtendedProperties.Add("Generator_UserColumnName", "Generos.Tipo");
+                base.Columns.Add(this._columnGeneros_Tipo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -4311,6 +4373,70 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Usuario_Nome {
+                get {
+                    try {
+                        return ((string)(this[this.tableLocacao._Usuario_NomeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Usuario.Nome\' in table \'Locacao\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLocacao._Usuario_NomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Livro_Titulo {
+                get {
+                    try {
+                        return ((string)(this[this.tableLocacao._Livro_TituloColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Livro.Titulo\' in table \'Locacao\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLocacao._Livro_TituloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Editar {
+                get {
+                    try {
+                        return ((string)(this[this.tableLocacao.EditarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Editar\' in table \'Locacao\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLocacao.EditarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Generos_Tipo {
+                get {
+                    try {
+                        return ((string)(this[this.tableLocacao._Generos_TipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Generos.Tipo\' in table \'Locacao\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLocacao._Generos_TipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LivrosRow LivrosRow {
                 get {
                     return ((LivrosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Locaçao_Livros"])));
@@ -4363,6 +4489,54 @@ namespace MVCProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDeletarNull() {
                 this[this.tableLocacao.DeletarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Usuario_NomeNull() {
+                return this.IsNull(this.tableLocacao._Usuario_NomeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Usuario_NomeNull() {
+                this[this.tableLocacao._Usuario_NomeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Livro_TituloNull() {
+                return this.IsNull(this.tableLocacao._Livro_TituloColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Livro_TituloNull() {
+                this[this.tableLocacao._Livro_TituloColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEditarNull() {
+                return this.IsNull(this.tableLocacao.EditarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEditarNull() {
+                this[this.tableLocacao.EditarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Generos_TipoNull() {
+                return this.IsNull(this.tableLocacao._Generos_TipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Generos_TipoNull() {
+                this[this.tableLocacao._Generos_TipoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6968,8 +7142,13 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAlt" +
-                " FROM dbo.Locacao where (ativo = 1)";
+            this._commandCollection[1].CommandText = @"SELECT Locacao.Id, Locacao.Livro, Locacao.Usuario, Locacao.Tipo, Locacao.Devolucao, Locacao.Ativo, Locacao.UsuInc, Locacao.UsuAlt, Locacao.DatInc, Locacao.DatAlt, Usuarios.Nome AS 'Usuario.Nome', Livros.Titulo AS 'Livro.Titulo', 
+                  Generos.Tipo AS 'Generos.Tipo'
+FROM     Locacao INNER JOIN
+                  Usuarios ON Locacao.Usuario = Usuarios.Id INNER JOIN
+                  Livros ON Locacao.Livro = Livros.Id INNER JOIN
+                  Generos ON Livros.Genero = Generos.Id
+WHERE  (Locacao.Ativo = 1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;

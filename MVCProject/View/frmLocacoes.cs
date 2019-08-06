@@ -24,7 +24,7 @@ namespace MVCProject.View
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Locacao' table. You can move, or remove it, as needed.
             this.locacaoTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Locacao);
-        }
+          }
 
         private void Button1_Click(object sender, EventArgs e)
         {

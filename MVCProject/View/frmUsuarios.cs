@@ -70,10 +70,5 @@ namespace MVCProject.View
 
             this.usuariosTableAdapter.CustomQuery(sistemaBibliotecaDataSet.Usuarios);
         }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -37,9 +37,9 @@
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.generosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaBibliotecaDataSet = new MVCProject.SistemaBibliotecaDataSet();
-            this.button1 = new System.Windows.Forms.Button();
             this.livroAutorTableAdapter = new MVCProject.SistemaBibliotecaDataSetTableAdapters.LivroAutorTableAdapter();
             this.generosTableAdapter = new MVCProject.SistemaBibliotecaDataSetTableAdapters.GenerosTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDataSet)).BeginInit();
@@ -58,12 +58,12 @@
             this.tipoDataGridViewTextBoxColumn,
             this.descricaoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.generosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 91);
+            this.dataGridView1.Location = new System.Drawing.Point(-2, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(740, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(678, 131);
             this.dataGridView1.TabIndex = 3;
             // 
             // Deletar
@@ -121,16 +121,6 @@
             this.sistemaBibliotecaDataSet.DataSetName = "SistemaBibliotecaDataSet";
             this.sistemaBibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(39, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 63);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // livroAutorTableAdapter
             // 
             this.livroAutorTableAdapter.ClearBeforeFill = true;
@@ -139,13 +129,38 @@
             // 
             this.generosTableAdapter.ClearBeforeFill = true;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::MVCProject.Properties.Resources.TOMELIROLA1;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(812, 125);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(304, 142);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Adicionar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // frmGeneros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Lime;
+            this.BackgroundImage = global::MVCProject.Properties.Resources._10zsg8h;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1115, 462);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
             this.Name = "frmGeneros";
             this.Text = "Generos";
             this.Load += new System.EventHandler(this.FrmGeneros_Load);
@@ -159,7 +174,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
         private SistemaBibliotecaDataSet sistemaBibliotecaDataSet;
         private SistemaBibliotecaDataSetTableAdapters.LivroAutorTableAdapter livroAutorTableAdapter;
         private System.Windows.Forms.BindingSource generosBindingSource;
@@ -169,5 +183,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button2;
     }
 }
